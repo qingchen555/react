@@ -1,6 +1,6 @@
 import './App.css'
 import React, { useState } from 'react'
-import UserPage from './components/userPage'
+import UserPage from './components/UserPage.js'
 
 // 使用react class实现点击按钮切换字体颜色
 // class App extends React.Component {

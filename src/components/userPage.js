@@ -1,4 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux'
+import MyButton from './MyButton'
+import { useCallback } from 'react'
 
 export default function UserPage() {
   // useSelector : get the state value from store
@@ -6,21 +8,22 @@ export default function UserPage() {
   // useDispatch: return the dispatch object collection
   const dispatch = useDispatch()
 
-  const onUpdate = () => {
+  // when child component have the self logic, so use the useCallback to reduce the repeat render
+  const onUpdate = useCallback(() => {
     dispatch({
       type: 'updateInfo',
       payload: {
         userName: 'guigui',
       },
     })
-  }
+  }, dispatch)
   return (
     <div>
       <div>
         name: <input type="text" value={userInfo.userName} />
       </div>
       <div>
-        <button onClick={onUpdate}>update the user info</button>
+        <MyButton onClick={onUpdate}>update the user info</MyButton>
       </div>
     </div>
   )
