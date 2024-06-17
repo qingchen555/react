@@ -1,5 +1,6 @@
 import './App.css'
 import React, { useState } from 'react'
+import UserPage from './components/userPage'
 
 // 使用react class实现点击按钮切换字体颜色
 // class App extends React.Component {
@@ -37,6 +38,7 @@ function App() {
     <div>
       <div style={{ color: color }}>licked color: {color}</div>
       <button onClick={onSwitchColor}>click to change the color</button>
+      <UserPage />
     </div>
   )
 }
