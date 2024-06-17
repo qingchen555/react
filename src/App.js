@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import React, { useState } from 'react'
 
+// 使用react class实现点击按钮切换字体颜色
+// class App extends React.Component {
+//   constructor(props) {
+//     super(props)
+//     this.state = { color: 'blue' }
+//   }
+
+//   onSwitchColor = () => {
+//     const { color } = this.state
+//     this.setState({ color: color === 'blue' ? 'red' : 'blue' })
+//   }
+
+//   render() {
+//     return (
+//       <div>
+//         <div style={{ color: this.state.color }}>
+//           your like color: {this.state.color}
+//         </div>
+//         <button onClick={this.onSwitchColor}> color change</button>
+//       </div>
+//     )
+//   }
+// }
+
+// use react hooks to realize the above same function
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          start Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+  const [color, setColor] = useState('blue')
 
-export default App;
+  const onSwitchColor = () => {
+    setColor(color === 'blue' ? 'red' : 'blue')
+  }
+
+  return (
+    <div>
+      <div style={{ color: color }}>licked color: {color}</div>
+      <button onClick={onSwitchColor}>click to change the color</button>
+    </div>
+  )
+}
+export default App
