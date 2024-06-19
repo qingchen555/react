@@ -10,6 +10,8 @@ import Featured from './components/featured-components/Featured.js'
 import Icon from './components/icons/index.js'
 import FeaturedPlaylist from './components/siderBar-component/FeaturedPlayList.js'
 import FeaturedItem from './components/siderBar-component/FeaturedItem.js'
+import MyComponent from './components/class-component/gouzi-component.js'
+import HookComponent from './components/class-component/react-hook-gouzi.js'
 
 function App() {
   const [color, setColor] = useState('blue')
@@ -22,7 +24,10 @@ function App() {
     <div className="app-wrap">
       {/* <MessageContext.Provider value={}> */}
       {/* 上下栏固定，中间可以显示虚拟滚动 */}
-      <div className="head-container">header</div>
+      <div className="head-container">
+        {/* <MyComponent /> */}
+        <HookComponent />
+      </div>
       <main className="main-container">
         <SideBar>
           <div className="nav-wrap">

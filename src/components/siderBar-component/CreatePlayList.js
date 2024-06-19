@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import Icon from '../icons'
 
 //Component a little different than all the other nav items
