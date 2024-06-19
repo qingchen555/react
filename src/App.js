@@ -7,6 +7,9 @@ import NavList from './components/siderBar-component/NavList.js'
 import { MessageContext } from './utilties/context.js'
 import Footer from './components/footer-components/Footer.js'
 import Featured from './components/featured-components/Featured.js'
+import Icon from './components/icons/index.js'
+import FeaturedPlaylist from './components/siderBar-component/FeaturedPlayList.js'
+import FeaturedItem from './components/siderBar-component/FeaturedItem.js'
 
 function App() {
   const [color, setColor] = useState('blue')
@@ -19,20 +22,32 @@ function App() {
     <div className="app-wrap">
       {/* <MessageContext.Provider value={}> */}
       {/* 上下栏固定，中间可以显示虚拟滚动 */}
-      <div className="head-container">
-        <div style={{ color: color }}>licked color: {color}</div>
-        <button onClick={onSwitchColor}>click to change the color</button>
-        {/* <UserPage /> */}
-      </div>
+      <div className="head-container">header</div>
       <main className="main-container">
         <SideBar>
-          <ul>
-            <li>home</li>
-            <li>search</li>
-          </ul>
+          <div className="nav-wrap">
+            <div className="nav-link">
+              <div className="nav-icon">
+                <Icon name={'Home'} />
+              </div>
+              <span>Home</span>
+            </div>
+            <div className="nav-link">
+              <div className="nav-icon">
+                <Icon name={'Search'} />
+              </div>
+              <span>Search</span>
+            </div>
+          </div>
+          <div className="palylist-wrap">
+            <h1 className="play-title">playlists</h1>
+            <FeaturedPlaylist>
+              <FeaturedItem></FeaturedItem>
+            </FeaturedPlaylist>
+          </div>
         </SideBar>
         <Featured>
-          <div>featured</div>
+          <div>main feature part</div>
         </Featured>
       </main>
 
