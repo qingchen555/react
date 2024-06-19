@@ -22,7 +22,7 @@ function App() {
       <div className="head-container">
         <div style={{ color: color }}>licked color: {color}</div>
         <button onClick={onSwitchColor}>click to change the color</button>
-        <UserPage />
+        {/* <UserPage /> */}
       </div>
       <main className="main-container">
         <SideBar>
